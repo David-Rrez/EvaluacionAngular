@@ -1,0 +1,63 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form_top {
+background-color: #00ff00;
+-webkit-box-shadow: 6px 10px 5px 0px rgba(48, 47, 47, 0.75);
+-moz-box-shadow: 6px 10px 5px 0px rgba(36, 35, 35, 0.75);
+box-shadow: 6px 10px 5px 0px rgba(43, 42, 42, 0.75);
+border-radius: 30px;
+height: 200px; 
+width: 95%;
+margin: 20px 30px 20px;
+}
+
+.form_top .texto{
+float: left;
+margin: 20px 20px 45px;
+}
+.form_top .texto p{
+    font-family: "Times New Roman", Georgia, Serif;
+    margin: 20px 30px 20px 80px;
+    font-style:monospace;
+    font-weight:bold;
+    font-size:45px;
+  color:#FFFF;
+}
+.imagen{
+background: url(../img/abc.png)no-repeat;
+margin:10px auto;
+width:180px;
+height:180px;
+background-size: 100% 100%;
+background-repeat:no-repeat;
+margin: 40px 30px 20px 1000px;
+}
+.datos .registrar{
+        padding: 45px 45px 20px;
+        margin-top: 50px;
+        background-color: white;
+        width: 500px;
+        height: 400px;
+        
+}
+.datos .registrar label{
+    font-weight: bold;
+    float: left;
+}
+.datos .registrar input{
+    float: right;
+    width: 250px;
+}
+.datos .registrar .btn input{
+
+    float: right;
+    width: 70px !important;
+    height: 35px;
+    color: rgb(5, 166, 224);
+}
+.datos .registrar div{
+    font-weight: bold;
+}

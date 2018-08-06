@@ -1,17 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="datos">
 <head>
-<title>Green Leaves</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<script src="./Angular/Angular.min.js"></script>
+	<!-- uso de jquery por el widget de calendario -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	<script>
+			$.datepicker.regional['es'] = {
+			closeText: 'Cerrar',
+			prevText: '< Ant',
+			nextText: 'Sig >',
+			currentText: 'Hoy',
+			monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+			monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+			dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+			dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+			dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+			weekHeader: 'Sm',
+			dateFormat: 'dd/mm/yy',
+			firstDay: 1,
+			isRTL: false,
+			showMonthAfterYear: false,
+			yearSuffix: ''
+			};
+			$.datepicker.setDefaults($.datepicker.regional['es']);
+		   $(function () {
+		   $("#fecha").datepicker();
+		   });
+		   </script>
+	<title>Document</title>
+	
 </head>
 <body>
-	<h1>Green Leaves</h1>
-	
-	<form>
-	Nombre:<input type="text" name="nombre" /><br />
-	E-mail:<input type="text" name="email" /><br />
-	Teléfono:<input type="text" name="telefono" /><br />
-	Fecha:<input type="text" name="fecha" /><br />
-	Ciudad y Estado:<input type="text" name="ciudad" /><br />
-	<input type="submit" value="Enviar" />
-	</form>
+	<div class="form_top">
+				<div class="texto">
+					<p>Green Leaves</p>
+				</div>
+				<div class="imagen">
+				</div>
+	</div>	
+	<div class="datos" ng-controller="datosOnline">
+		{{formulario.$valid}}	
+		<form class="registrar" id="formulario" name="formulario" novalidate>
+				<div>
+					<label>Nombre:  </label>
+					<input type="text" name="nombre" ng-model="dat.nombre" required/><br/>
+
+				</div>
+					<br>
+				<div>
+						<label>Email:</label><input type="text" name="email" ng-model="dat.email" required/><br />
+
+				</div>
+					<br>
+					<div>
+							<label>Telefono:</label>	
+							<input type="number" name="telefono" ng-model="dat.telefono" required/><br />		
+					</div>
+					<br>
+					<div>
+							<label>Fecha:</label>	
+							<input type="date" id="fecha" ng-model="dat.fecha" required/><br />		
+					</div>
+					<br>
+					<div>
+							<label>Ciudad y Estado:</label>	
+							<input type="text" name="ciudad" ng-model="dat.ciudad" required/>
+					</div>
+					<br>
+					<br>
+					<div class="btn">
+						<br>
+					<input type="submit" ng-click="formulario.$valid && save()" value="Enviar" />
+					</div> 
+			</form>
+	</div>
 </body>
 </html>
